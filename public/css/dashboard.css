@@ -1,0 +1,96 @@
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+}
+body{
+  height: 100vh;
+}
+main {
+  display: grid;
+  height: 92%;
+  grid-template-columns: 1fr 4fr;
+  row-gap: 3rem;
+}
+.sidebar {
+  margin: 0;
+  padding: 0;
+
+
+  background-color: #f1f1f1;
+  position:sticky;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Student */
+.dashboard{
+  width : 100%;
+
+}
+.dashboard table{
+  width:60%;
+  margin: 10px auto;
+  border-collapse:separate;
+  border-spacing: 10px 10px;
+
+}
+.dashboard tr{
+  height: 30px;
+}
+.firstcol{
+  width : 40%;
+}
+ .secondcol{
+   width : 20%;
+ }
+ .dashboard .col{
+   width : 20%;
+ }
+.dashboard th ,.dashboard   td ,  .dashboard .col{
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px/20px;
+  margin: 0 auto;
+}
+.dashboard tr{
+  background-color: #B1AFFF;
+
+}
+
+.dashboard th{
+  background-color: #001253;
+
+}
+.enrolled .firstcol{
+  width : 60%;
+}
+.dashboard button{
+  background-color: inherit;
+  width: 100%;
+  border: none;
+  color: white;
+}

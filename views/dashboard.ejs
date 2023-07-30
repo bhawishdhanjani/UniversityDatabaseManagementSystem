@@ -1,0 +1,82 @@
+
+<%- include("header")-%>
+<div class="dashboard">
+  <%if(status=='student'){%>
+  <table>
+    <tr>
+      <th class="firstcol">Subject</th>
+      <th class="secondcol">Enroll</th>
+    </tr>
+    <%for(let i = 0 ; i<data.length ;i++ ){%>
+    <tr>
+      <td class="firstcol"><%=data[i].sub_name%></td>
+      <td class="secondcol">
+        <form class="" action="/enroll" method="post">
+          <input hidden type="text" name="sub_id" value=<%=data[i].sub_id%>>
+          <button type="submit">Enroll</button>
+        </form>
+      </td>
+    </tr>
+    <%}%>
+  </table>
+  <!-- Enroled Cources -->
+  <table class="enrolled">
+    <tr>
+      <th class="firstcol">Enrolled Subject</th>
+
+    </tr>
+    <%for(let i = 0 ; i<enrolsub.length ;i++ ){%>
+    <tr>
+      <td class="firstcol"><%=enrolsub[i].sub_name%></td>
+    </tr>
+    <%}%>
+  </table>
+  </table>
+  <%}%>
+  <%if(status=='admin'){ %>
+    <table class="admin">
+      <tr>
+        <th class="col">Department Name</th>
+        <th class="col">No of Student</th>
+        <th class="col">No of Teacher</th>
+        <th class="col">No of Subject</th>
+      </tr>
+      <%for(let i = 0 ; i<data.length ;i++ ){%>
+      <tr>
+        <td class="col"><%=data[i].d_name%></td>
+        <td class="col"><%=data[i].s_no%></td>
+        <td class="col"><%=data[i].t_no%></td>
+        <td class="col"><%=data[i].sub_no%></td>
+      </tr>
+      <%}%>
+    </table>
+
+  <%}%>
+  <%if(status=='teacher'){ %>
+    <table class="teacher">
+      <tr>
+        <th class="col">Subject Name</th>
+      </tr>
+      <%for(let i = 0 ; i<subject.length ;i++ ){%>
+      <tr>
+        <td class="col"><%=subject[i].sub_name%></td>
+      </tr>
+      <%}%>
+    </table>
+    <table class="student">
+      <tr>
+        <th class="col">Student Name</th>
+      </tr>
+      <%for(let i = 0 ; i<student.length ;i++ ){%>
+      <tr>
+        <td class="col"><%=student[i].s_name%></td>
+      </tr>
+      <%}%>
+    </table>
+
+  <%}%>
+
+
+</div>
+
+<%- include("footer")-%>

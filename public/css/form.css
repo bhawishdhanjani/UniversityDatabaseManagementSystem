@@ -1,0 +1,42 @@
+.dataform{
+  margin-left: 20%;
+  margin-right: 10%;
+}
+.dataform label {
+  color: black;
+  display: block;
+  font-size: 1;
+  margin-bottom: 0.5rem;
+}
+.dataform input:not([type=radio]) , .dataform select{
+  width : 60%;
+  padding: 1rem;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 1rem;
+  margin:auto;
+}
+
+.dataform form{
+  width: 100%;
+  padding: 0;
+  margin: 0 auto 0 auto;
+
+  padding: 1.5rem;
+}
+.dataform input[type="radio"]{
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  margin-right: 0.8rem;
+}
+
+.dataform button{
+  width : 60%;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: #37af65;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

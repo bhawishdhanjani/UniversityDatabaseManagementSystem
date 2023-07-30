@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>University Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>University DataBase Management System</h1>
+      </div>
+      <div class="form">
+        <form class="" action="/dashboard" method="post">
+          <label for="email">Email</label>
+          <input type="email" name="email" value="">
+          <label for="password">Password</label>
+          <input type="password" name="password" value="">
+          <div class="formcell">
+            <p>Select Your Status</p>
+            <label> <input required type="radio" name="status" value="admin">  Admin</label>
+            <label> <input required type="radio" name="status" value="teacher"> Teacher</label>
+            <label> <input required type="radio" name="status" value="student"> Student</label>
+          </div>
+          <button type="submit" name="button">Login</button>
+        </form>
+      </div>
+
+
+    </div>
+
+  </body>
+</html>

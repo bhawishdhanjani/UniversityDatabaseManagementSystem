@@ -1,0 +1,86 @@
+<%- include("header")-%>
+<div class="dataform">
+  <form class="" action=<%=route%> method="post">
+    <!-- Name and address -->
+
+    <%if(formtype=="AD" || formtype=="AT"){%>
+    <label for="name">Name</label>
+    <input required type="text" name="name" value="">
+    <label for="address">Address</label>
+    <input required type="text" name="address" value="">
+    <%}%>
+
+    <!-- Name and Phone No -->
+    <%if(formtype=="AS"){%>
+    <label for="name">Name</label>
+    <input required id="name" type="text" name="name" value="">
+    <label for="phoneno">Phone Number</label>
+    <input required id="phoneno" type="txt" name="phoneno" value="">
+    <%}%>
+
+    <!-- DOB -->
+    <%if(formtype=="AT" || formtype=="AS" ){%>
+    <label for="dob">Date of Birth</label>
+    <input required id='dob' type="date" name="dob" value="">
+    <label for=password>Password</label>
+    <input required type="password" name="password" value="">
+    <%}%>
+
+    <!-- Department -->
+    <%if((formtype=="AT" || formtype=="ADSB" || formtype=="AS") && status=='admin' ){%>
+    <label for="department">Select Department</label>
+    <select required name="dept" id="department">
+      <option selected disabled value="null">Select the Department</option>
+      <% for(let i = 0 ; i<departments.length ; i++){%>
+      <option value=<%=departments[i].d_id%>><%=departments[i].d_name%></option>
+      <% }%>
+    </select>
+    <%}%>
+
+    <!-- Subject-->
+    <%if(formtype=="AT"){%>
+    <label for="tsubject">Subject</label>
+    <select required name="tsubject" id="tsubject">
+      <option selected hidden disabled value="null">Select the Subject</option>
+      <% for(let i = 0 ; i<tsubject.length ; i++){%>
+      <option style="display : none ;" class=<%=tsubject[i].d_id%> value=<%=tsubject[i].sub_id%>> <%=tsubject[i].sub_name%></option>
+      <% }%>
+    </select>
+    <%}%>
+
+    <!-- Department ID , FEES , MANAGER   -->
+    <%if(formtype=="AD"){%>
+    <label for="id">ID</label>
+    <input type="text" name="id" value="">
+    <label for="d_fees">Department Fees</label>
+    <input type="text" name="d_fess" value="">
+    <label for="d_manager">Department Manager</label>
+    <input type="text" name="d_manager" value="">
+    <%}%>
+
+    <!-- Subject Name -->
+    <%if(formtype=="ASB"){%>
+    <label for="name">Subject Name</label>
+    <input type="text" name="subname" value="">
+    <%}%>
+
+    <!-- Department Subject -->
+    <%if(formtype=='ADSB'){%>
+    <label for="deptsub">Select Department Subject</label>
+    <select name="deptsub" id="deptsub">
+      <% for(let i = 0 ; i<subjects.length ; i++){%>
+      <option value=<%=subjects[i].sub_id%>><%=subjects[i].sub_name%></option>
+      <% }%>
+    </select>
+    <label for="ch">Select Credit Hours</label>
+    <select name="credithour" id="ch">
+      <option value=1>1</option>
+      <option value=2>2</option>
+    </select>
+    <%}%>
+
+<!-- BUTTON -->
+    <button type="submit" name="button">Add</button>
+ </form>
+</div>
+<%- include("footer")-%>
